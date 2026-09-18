@@ -605,6 +605,11 @@ button, a {
 }
 
 @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 20px;
+        scroll-padding-bottom: 80px;
+    }
+
     .site-header {
         padding: 24px 0 0;
         position: static;
