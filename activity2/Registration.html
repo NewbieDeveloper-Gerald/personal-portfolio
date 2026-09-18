@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Forn</title>
+</head>
+<body style="margin: 0;">
+    <header style="background-color:coral; text-align:center; padding: 10px;">
+        <h1> Student Registration Form </h1>
+    </header>
+
+    <nav style="background-color:lightblue; display:flex; justify-content:center; gap: 50px; padding: 10px;">
+        <a href="Home.html"> Home </a>
+        <a href="Registration.html"> Registration Form </a>
+        <a href="Grade.html"> Grade Table </a>
+        <a href="Profile.html"> My Profile </a> 
+    </nav>
+<div style="background-color: blanchedalmond; height: 650px; padding: 60px">
+    <form >
+        Student Name  <br> <input type="text" name="first_name" />
+        <br>
+        Student Number  <br> <input type="text" name="last_name" />
+        <br>
+        Email <br> <input type="text" name="last_name" />
+    </form>
+
+    <form> 
+        <b> Gender </b>  <br> 
+        <input type="radio" name="subject" value="Male"> Male
+        <input type="radio" name="subject" value="Female"> Female
+    </form>
+
+    <form>
+        <b> Course </b> <br> 
+        <select name="dropdown">
+        <option value="BSCS" selected>BSCS</option>
+        <option value="BSIT">BSIT</option>
+        </select>
+    </form>
+
+    <form>
+        <b> Skills </b>  <br> 
+        <input type="checkbox" name="maths" value="on"> HTML
+        <input type="checkbox" name="physics" value="on"> CSS
+        <input type="checkbox" name="physics" value="on"> JavaScript
+    </form>
+        
+    <form>
+        <b> Address </b> <br>
+        <textarea rows="5" cols="50" name="description" placeholder=  "Enter description here..."></textarea>
+    </form>
+
+    <form>
+        <input type="submit" name="submit" value="Submit" />
+        <input type="reset" name="reset"  value="Reset" />
+    </form>
+
+</div>   
+
+    <footer style="background-color: coral; display:flex; justify-content:center;">
+        <h5 >Copyright @ 2026 </h5>
+    </footer>
+    
+</body>
+</html>

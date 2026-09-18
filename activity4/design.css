@@ -1,0 +1,119 @@
+/* all */
+* {
+    margin: 10px;
+    padding: 5px;
+}
+body{
+    background-color: burlywood;
+}
+.heading{
+    background-color:coral;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+.navigation{
+    background-color:cornsilk;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+.navigation a{
+    display: flex;
+    text-decoration: none;
+}
+.navigation a:hover{
+    background-color:coral;
+    border-radius: 50px;
+}
+
+.bot{
+    background-color: coral;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/* HOME */
+
+.con{
+    display: flex;
+    
+}
+.welcome{
+    background-color:darkkhaki;
+    flex: 3;
+    border-radius: 20px;
+}
+.announcement{
+    background-color:darksalmon;
+    flex: 1;
+    border-radius: 20px;
+}
+
+
+/* PROFILE */
+.profile{
+    background-color: white;
+    display: flex;
+    border-radius: 20px;
+}
+
+
+/* REGISTRATION  */
+.Reg{
+    background-color: white;
+    border-radius: 20px;
+}
+
+.regname{
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"]{
+    width: 95%;
+    padding: 10px;
+    border-radius: 20px;
+}
+input[type="submit"]{
+    width: 98%;
+    padding: 10px;
+    border-radius: 20px;
+}
+textarea{
+    width: 95%;
+    padding: 10px;
+    border-radius: 20px;
+}
+select[name="dropdown"]{
+    width: 98%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* GRADES */
+.grade{
+    background-color: white;
+    border-radius: 20px;
+}
+
+.table{
+    border: 5px solid;
+    width: 850px;
+    height: 250px;
+    text-align: center;
+    border-radius: 20px;
+}
+th{
+    background-color: burlywood;
+}
+
+.gradename{
+    display: flex;
+    justify-content: center;
+}
+.avg{
+    background-color: burlywood;
+}
+
