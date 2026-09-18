@@ -651,15 +651,17 @@ button, a {
         z-index: 1000;
         width: max-content;
         max-width: 90vw;
-        gap: 20px;
-        flex-wrap: nowrap !important;
-        justify-content: space-between;
+        gap: clamp(12px, 3vw, 20px);
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
         margin: 0;
     }
     
     .main-nav a {
-        font-size: 0.75rem;
+        font-size: clamp(0.65rem, 2vw, 0.75rem);
         padding: 4px;
+        white-space: nowrap;
     }
     
     .main-nav a::after {
@@ -693,11 +695,12 @@ button, a {
 
 @media (max-width: 400px) {
     .main-nav {
-        gap: 14px;
+        gap: 10px;
         padding: 14px 18px;
     }
     
     .main-nav a {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+        letter-spacing: 0.04em;
     }
 }
