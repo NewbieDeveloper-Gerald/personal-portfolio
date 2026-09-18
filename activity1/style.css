@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0.5%;
+    flex-wrap: wrap;
+}
+
+header{
+    display: flex;
+    background-color: burlywood;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    align-items: center;
+}
+
+.nav-bar{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+} 
+
+.nav-bar a{
+    text-decoration: none;
+    padding: 10px;
+} 
+.nav-bar a:hover{
+    background-color: coral;
+    border-radius: 10px;
+}
+
+
+
+
+.main-content{
+    display: flex;
+    background-color: blanchedalmond;
+}
+
+.hero-words{
+    flex: 3;
+    padding: 5%;
+}
+
+.hero-image, .img1{
+    flex: 1;
+    width: 500px;
+    height: 500px;
+    margin: 5;
+}
+.on-btn{
+    border-radius: 25px;
+}
+.on-btn:hover{
+    background-color: coral;
+    border-radius: 50px;
+}
+
+.aboutus-page{
+    background-color: darkkhaki;
+    height: 450px;
+}
+
+.Samples-content{
+    background-color: cornsilk;
+    height: 450px;
+}
+
+.contactus-page{
+    border: 5 solid ;
+    background-color: darksalmon;
+    border-radius: 30px;
+    height: 450px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.border-contact{
+    background-color: chocolate;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid burlywood;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    background-color: burlywood;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
