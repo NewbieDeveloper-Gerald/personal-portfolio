@@ -45,7 +45,7 @@
     --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
     --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.08);
     --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.04);
-    --shadow-hover: 0 20px 48px rgba(37, 99, 235, 0.12);
+    --shadow-hover: 0 20px 40px rgba(15, 23, 42, 0.12);
 
     /* Radii */
     --radius-sm: 8px;
@@ -293,6 +293,31 @@ button {
     color: var(--accent);
     background: var(--accent-subtle);
     font-weight: 700;
+}
+
+/* GitHub Action Button in Nav */
+.main-nav a.nav-btn-github {
+    background: var(--ink-primary);
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 6px;
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+    border: 1px solid var(--ink-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all var(--trans-fast);
+}
+
+.main-nav a.nav-btn-github:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
 }
 
 /* --------------------------------------------------------------------------
@@ -1595,13 +1620,18 @@ section {
     }
 
     .main-nav a {
-        font-size: 0.76rem;
-        padding: 6px 12px;
+        font-size: 0.72rem;
+        padding: 6px 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2px;
         white-space: nowrap;
+    }
+
+    .main-nav a.nav-btn-github {
+        margin-left: 0;
+        padding: 6px 10px;
     }
 
     .main-nav a svg {
