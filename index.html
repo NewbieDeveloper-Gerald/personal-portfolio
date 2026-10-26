@@ -9,7 +9,7 @@
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="portfolio_styles.css">
@@ -17,9 +17,6 @@
 <body>
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Top Scroll Reading Progress -->
-    <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
     <!-- Header & Navigation -->
     <header class="site-header">
@@ -37,7 +34,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                     <span>Home</span>
                 </a>
-                <a href="#activities">
+                <a href="activities.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                     <span>Activities</span>
                 </a>
@@ -72,9 +69,9 @@
                     </svg>
                 </button>
 
-                <a href="#contact" class="nav-cta-btn">
-                    <span>Let's Talk</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="resume.html" target="_blank" class="nav-cta-btn" aria-label="View Curriculum Vitae">
+                    <span>Resume / CV</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </a>
             </div>
         </div>
@@ -115,20 +112,20 @@
                 <!-- Quick Stats -->
                 <div class="quick-stats">
                     <div class="stat-item">
-                        <span class="stat-value">08<span class="stat-accent">+</span></span>
-                        <span class="stat-label">Web Activities</span>
+                        <span class="stat-value">09</span>
+                        <span class="stat-label">Coursework Projects</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-value">BSIT</span>
                         <span class="stat-label">Degree Student</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-value">Midterm &amp; Finals</span>
-                        <span class="stat-label">Coursework Completed</span>
+                        <span class="stat-value">05 • 04</span>
+                        <span class="stat-label">Midterms &amp; Finals</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-value">100<span class="stat-accent">%</span></span>
-                        <span class="stat-label">Responsive &amp; Accessible</span>
+                        <span class="stat-label">Semantic &amp; Responsive</span>
                     </div>
                 </div>
             </div>
@@ -136,15 +133,10 @@
             <!-- Profile Panel -->
             <div class="profile-panel" aria-label="Gerald Velasco profile portrait">
                 <div class="profile-container">
-                    <div class="profile-ring-glow" aria-hidden="true"></div>
                     <div class="profile-ring-outer">
                         <div class="profile-photo">
                             <img src="image/profile.png" alt="Gerald R. Velasco portrait" id="profile-img" width="380" height="709">
                         </div>
-                    </div>
-                    <div class="profile-floating-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        <span>Frontend Explorer</span>
                     </div>
                 </div>
             </div>
@@ -153,10 +145,9 @@
         <!-- Activity Highlights Section -->
         <section id="activities" class="activities" aria-labelledby="activities-title">
             <div class="section-header">
-                <span class="section-label">Academic Highlights</span>
-                <h2 id="activities-title" class="section-title">Activity Highlights</h2>
+                <h2 id="activities-title" class="section-title">Coursework Highlights</h2>
                 <p class="section-subtitle">
-                    A preview of key coursework completed throughout the BSIT semester, featuring foundational web layouts and dynamic JavaScript applications.
+                    A preview of key coursework completed throughout the BSIT semester, demonstrating progression from semantic HTML/CSS to asynchronous JavaScript and AJAX.
                 </p>
             </div>
 
@@ -164,16 +155,16 @@
                 <!-- Midterm Teaser Card -->
                 <div class="activities-teaser-card">
                     <div>
-                        <span class="teaser-badge">Midterm Period</span>
-                        <h3 class="teaser-card-title">Midterm Activities (1, 2, 4 &amp; 5)</h3>
+                        <h3 class="teaser-card-title">Midterm Activities (5 Projects)</h3>
                         <p class="teaser-card-desc">
-                            Core foundational web layouts including structured personal web journals, multi-page student registration &amp; grade portals, Flexbox architecture, and commercial coffee brand landing pages.
+                            Core foundational layouts and interactive tools: structured web journals, multi-page student registration systems, interactive GWA calculator, Flexbox portals, and commercial brand showcases.
                         </p>
                         <div class="teaser-tag-list">
                             <span class="teaser-tag">Web Journal (Act 1)</span>
                             <span class="teaser-tag">Student Portal (Act 2)</span>
+                            <span class="teaser-tag">GWA Calculator (Act 3)</span>
                             <span class="teaser-tag">Flexbox Portal (Act 4)</span>
-                            <span class="teaser-tag">La KAPE pa Brand (Act 5)</span>
+                            <span class="teaser-tag">La KAPE pa (Act 5)</span>
                         </div>
                     </div>
                     <a href="activities.html?filter=midterm" class="teaser-card-link">
@@ -185,10 +176,9 @@
                 <!-- Finals Teaser Card -->
                 <div class="activities-teaser-card finals">
                     <div>
-                        <span class="teaser-badge">Finals Period</span>
-                        <h3 class="teaser-card-title">Finals Activities (Final Act 1 &ndash; 4)</h3>
+                        <h3 class="teaser-card-title">Finals Activities (4 Projects)</h3>
                         <p class="teaser-card-desc">
-                            Advanced client-side scripting and asynchronous architecture, featuring interactive DOM event listeners &amp; gestures, ES6 Promise chaining, concurrent Promise.all() loaders, jQuery DOM manipulation, and native AJAX/XHR data loaders.
+                            Advanced client-side scripting and asynchronous APIs: interactive DOM gesture listeners, ES6 Promise chaining, Promise.all() loaders, jQuery DOM manipulation, and native AJAX/XHR data loaders.
                         </p>
                         <div class="teaser-tag-list">
                             <span class="teaser-tag">Interactive Card (Final 1)</span>
@@ -207,7 +197,7 @@
             <!-- Central CTA Button to Activities Page -->
             <div class="teaser-cta-wrap">
                 <a href="activities.html" class="primary-btn">
-                    <span>View All Activities on Dedicated Page (9 Projects)</span>
+                    <span>View All 9 Projects on Dedicated Page</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
@@ -216,8 +206,7 @@
         <!-- About Section -->
         <section id="about" class="about" aria-labelledby="about-title">
             <div class="section-header">
-                <span class="section-label">About Me</span>
-                <h2 id="about-title" class="section-title">Crafting Digital Experiences with Code</h2>
+                <h2 id="about-title" class="section-title">About Me</h2>
                 <p class="section-subtitle">
                     A dedicated Information Technology student committed to mastering modern web architecture, clean code standards, and seamless user experiences.
                 </p>
@@ -321,90 +310,75 @@
         <!-- Contact Section -->
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="section-header">
-                <span class="section-label">Contact</span>
                 <h2 id="contact-title" class="section-title">Let's Connect &amp; Collaborate</h2>
                 <p class="section-subtitle">
-                    Have an opportunity, internship offer, or feedback on my projects? Feel free to reach out via email or social channels below.
+                    Have an internship opportunity, project feedback, or want to connect? Reach out through any channel below.
                 </p>
             </div>
 
-            <div class="contact-layout">
-                <!-- Contact Channels Column -->
-                <div class="contact-info-column">
-                    <!-- Email Card -->
-                    <div class="contact-card-interactive">
-                        <div class="contact-card-left">
-                            <div class="contact-card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            </div>
-                            <div class="contact-card-details">
-                                <h4>Email Address</h4>
-                                <a href="mailto:velascogerald.pdm@gmail.com" id="contact-email-link">velascogerald.pdm@gmail.com</a>
-                            </div>
+            <div class="contact-hub-grid">
+                <!-- Primary Email Card -->
+                <div class="contact-card-interactive primary-channel">
+                    <div class="contact-card-left">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                         </div>
-                        <button type="button" class="copy-btn" id="copy-email-btn" aria-label="Copy email address to clipboard" data-copy-value="velascogerald.pdm@gmail.com">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                            <span>Copy</span>
-                        </button>
-                    </div>
-
-                    <!-- Facebook Card -->
-                    <div class="contact-card-interactive">
-                        <div class="contact-card-left">
-                            <div class="contact-card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
-                            </div>
-                            <div class="contact-card-details">
-                                <h4>Facebook Profile</h4>
-                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">facebook.com/GeraldVelasco</a>
-                            </div>
-                        </div>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="copy-btn" aria-label="Visit Facebook Profile">
-                            <span>Visit Profile</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-
-                    <!-- Location & Availability Card -->
-                    <div class="contact-card-interactive">
-                        <div class="contact-card-left">
-                            <div class="contact-card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                            </div>
-                            <div class="contact-card-details">
-                                <h4>Location &amp; Availability</h4>
-                                <p>Marikina City, Philippines • Open to On-site &amp; Remote roles</p>
-                            </div>
+                        <div class="contact-card-details">
+                            <h3>Email Address</h3>
+                            <a href="mailto:velascogerald.pdm@gmail.com" id="contact-email-link">velascogerald.pdm@gmail.com</a>
                         </div>
                     </div>
+                    <button type="button" class="copy-btn" id="copy-email-btn" aria-label="Copy email address to clipboard" data-copy-value="velascogerald.pdm@gmail.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        <span>Copy</span>
+                    </button>
                 </div>
 
-                <!-- Interactive Quick Message Form -->
-                <div class="contact-form-card">
-                    <h3>Send a Direct Message</h3>
-                    <p>Fill out the fields below to draft an email directly to my inbox.</p>
-                    
-                    <form id="contact-form" action="mailto:velascogerald.pdm@gmail.com" method="GET" enctype="text/plain">
-                        <div class="form-group">
-                            <label for="form-name" class="form-label">Your Name</label>
-                            <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Maria Santos" required>
+                <!-- GitHub Profile Card -->
+                <div class="contact-card-interactive">
+                    <div class="contact-card-left">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                         </div>
-
-                        <div class="form-group">
-                            <label for="form-subject" class="form-label">Subject</label>
-                            <input type="text" id="form-subject" name="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity" required>
+                        <div class="contact-card-details">
+                            <h3>GitHub Codebase</h3>
+                            <a href="https://github.com/GeraldVelasco" target="_blank" rel="noopener noreferrer">github.com/GeraldVelasco</a>
                         </div>
+                    </div>
+                    <a href="https://github.com/GeraldVelasco" target="_blank" rel="noopener noreferrer" class="copy-btn" aria-label="Visit GitHub Profile">
+                        <span>View</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
 
-                        <div class="form-group">
-                            <label for="form-message" class="form-label">Message</label>
-                            <textarea id="form-message" name="body" class="form-textarea" placeholder="Hello Gerald, I'd like to talk about..." required></textarea>
+                <!-- Facebook Profile Card -->
+                <div class="contact-card-interactive">
+                    <div class="contact-card-left">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
                         </div>
+                        <div class="contact-card-details">
+                            <h3>Facebook Profile</h3>
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">facebook.com/GeraldVelasco</a>
+                        </div>
+                    </div>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="copy-btn" aria-label="Visit Facebook Profile">
+                        <span>Visit</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
 
-                        <button type="submit" class="form-submit-btn">
-                            <span>Send Message via Email Client</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        </button>
-                    </form>
+                <!-- Location & Availability Card -->
+                <div class="contact-card-interactive">
+                    <div class="contact-card-left">
+                        <div class="contact-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-card-details">
+                            <h3>Location &amp; Availability</h3>
+                            <p>Marikina City, Philippines &bull; Available for Web Projects &amp; Internships</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -417,10 +391,9 @@
                 &copy; 2026 <strong>Gerald R. Velasco</strong>. Built with Semantic HTML5, CSS3 Tokens &amp; Vanilla JavaScript.
             </p>
             <div class="footer-links">
-                <a href="#home">Back to Top &uarr;</a>
-                <a href="#activities">Activities</a>
+                <a href="activities.html">Activities (9 Projects)</a>
                 <a href="#about">About Me</a>
-                <a href="activities.html">All Activities &rarr;</a>
+                <a href="resume.html" target="_blank">Resume / CV</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -472,18 +445,7 @@
                 });
             }
 
-            // 2. Reading / Scroll Progress Bar
-            const progressBar = document.getElementById('scroll-progress');
-            window.addEventListener('scroll', () => {
-                const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                if (progressBar) {
-                    progressBar.style.width = scrolled + '%';
-                }
-            }, { passive: true });
-
-            // 3. Scrollspy & Intersection Observer for Navigation Links
+            // 2. Scrollspy & Intersection Observer for Navigation Links
             const navLinks = document.querySelectorAll('.main-nav a');
             const sections = document.querySelectorAll('section[id]');
             
@@ -510,8 +472,7 @@
 
             sections.forEach(sec => sectionObserver.observe(sec));
 
-
-            // 5. Clipboard Copy with Toast Feedback
+            // 3. Clipboard Copy with Toast Feedback
             const copyEmailBtn = document.getElementById('copy-email-btn');
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toast-message');
@@ -547,24 +508,7 @@
                 });
             }
 
-            // 8. Contact Form Handling
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const name = document.getElementById('form-name').value.trim();
-                    const subject = document.getElementById('form-subject').value.trim();
-                    const body = document.getElementById('form-message').value.trim();
-
-                    const emailSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - ${name}`);
-                    const emailBody = encodeURIComponent(`From: ${name}\n\n${body}`);
-
-                    window.location.href = `mailto:velascogerald.pdm@gmail.com?subject=${emailSubject}&body=${emailBody}`;
-                    showToast('Opening your default email client...');
-                });
-            }
-
-            // 9. Back to Top Floating Button
+            // 4. Back to Top Floating Button
             const backToTopBtn = document.getElementById('back-to-top');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 400) {
