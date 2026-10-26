@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body{
+            background-color:floralwhite;
+            display: flex;
+            justify-content: center;
+        }
+        .title1{
+            background-color: burlywood;
+            margin-bottom: 10px;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        /* STUDENT INFORMATION*/
+        .card1{
+            background-color: burlywood;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: solid 2px black;
+        }
+
+        #btnchange{
+            background-color:darkseagreen;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 30%;
+            height: 5%;
+            margin: 11px;
+        }
+        #btnshow{
+            background-color:darkseagreen;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 30%;
+            height: 5%;
+            margin: 11px;
+        }
+        #btnhide{
+            background-color:darksalmon;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 30%;
+            height: 5%;
+            margin: 11px;
+        }
+        .card1-output{
+            background-color:darksalmon;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card1-output{
+            text-align: center;
+        }
+
+        .btns{
+            text-align: center;
+        }
+        /* STUDENT INFORMATION*/
+
+        /* Choose Your Course*/
+        .card2{
+            background-color: burlywood;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: solid 2px black;
+        }
+
+        select{
+            width: 750px;
+            height: 35px;
+            border-radius: 10px;
+        }
+
+        /* Choose Your Course*/
+
+        /* Student List*/
+        .card3{
+            background-color: burlywood;
+            margin-top: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            border: solid 2px black;
+        }
+
+         #btnhide1{
+            background-color:darkseagreen;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 20%;
+            height: 5%;
+            margin-top: 10px;
+        }
+        #btnshow1{
+            background-color:darkseagreen;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 20%;
+            height: 5%;
+            margin-top: 10px;
+        }
+        #btneven{
+            background-color:lightblue;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 20%;
+            height: 5%;
+            margin-top: 10px;
+        }
+        #btnodd{
+            background-color:lightgreen;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            width: 20%;
+            height: 5%;
+            margin-top: 10px;
+        }
+        table{
+            width: 100%;
+            text-align: center;
+        }
+        table th{
+            background-color:coral;
+        }
+
+        .btns1{
+            text-align: center;
+        }
+
+        /* Student List*/
+        
+       
+    </style>
+<body>
+    <section>
+        <div class="title1">
+            <h1 id="title">My Student Profile</h1>
+            <p>Welcome to my interactive portfolio</p>
+        </div>
+        
+        <div class="card1"> 
+            <h3>Student Information</h3>
+            <p><b>Name:</b> Gerald R. Velasco</p>
+            <b>Course: <p id="output-course">BSIT</p></b> 
+            
+            <p><b>Year Level:</b> 3rd Year</p>
+        </div>
+
+        <div class="btns"> 
+            <button id="btnchange">Change Title</button>
+            <button id="btnhide">Hide Profile</button>
+            <button id="btnshow">Show Profile</button>
+
+        </div>
+        
+        
+        <p class="card1-output">OUTPUT</p>
+
+        
+
+        <div class="card2"> 
+            <h3>Choose Your Course</h3>
+            <select id="course">
+                <option value="">Select Course</option>
+                <option>BSCS</option>
+                <option>BSOA</option>
+                <option>BSTM</option>
+                <option>BSHM</option>
+            </select>
+        <p id="course1">No Course Selected</p>
+        </div>
+
+        
+
+        <div class="card3"> 
+            <h3>Student List</h3>
+                <table border="2" id="table">
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Year Level</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Gerald</td>
+                        <td>BSIT</td>
+                        <td>3rd Year</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Gerald</td>
+                        <td>BSIT</td>
+                        <td>3rd Year</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Gerald</td>
+                        <td>BSIT</td>
+                        <td>3rd Year</td>
+                    </tr>
+
+                    <tr class="tr1">
+                        <td>1</td>
+                        <td>Gerald</td>
+                        <td>BSIT</td>
+                        <td>3rd Year</td>
+                    </tr>
+                </table>
+        </div>
+
+        <div class="btns1">
+            <button id="btneven">Even</button>
+            <button id="btnodd">Odd</button>
+            <button id="btnshow1">Show Table</button>
+            <button id="btnhide1">Hide Tab</button>
+        </div>
+        
+        
+    </section>
+        
+        
+        
+        
+
+    <script src="script.js"></script>
+   
+</body>
+</html>

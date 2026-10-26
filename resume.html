@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Gerald R. Velasco — BSIT Student & Frontend Developer specializing in HTML5, CSS3, JavaScript, jQuery, and AJAX.">
+    <title>Resume — Gerald R. Velasco | BSIT Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="portfolio_styles.css">
+    <style>
+        .standalone-resume-page {
+            max-width: 900px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        .resume-top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .resume-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 8px 16px;
+            background: var(--bg-surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-pill);
+            transition: all var(--trans-fast);
+        }
+
+        .resume-back-link:hover {
+            background: var(--accent-subtle);
+            border-color: var(--accent);
+            transform: translateX(-3px);
+        }
+
+        .resume-paper {
+            background: var(--bg-surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .resume-sheet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--line);
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .resume-sheet-title h1 {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--ink-primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 6px;
+        }
+
+        .resume-sheet-title .degree-tag {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .resume-contact-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.9rem;
+            color: var(--ink-muted);
+        }
+
+        .resume-contact-inline span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .resume-contact-inline a {
+            color: var(--ink-secondary);
+            text-decoration: none;
+        }
+
+        .resume-contact-inline a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .resume-section-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--ink-primary);
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 8px;
+            margin-top: 32px;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .resume-section-heading svg {
+            color: var(--accent);
+        }
+
+        .resume-block {
+            margin-bottom: 24px;
+        }
+
+        .resume-entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .resume-entry-header h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink-primary);
+        }
+
+        .resume-entry-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-subtle);
+            padding: 2px 10px;
+            border-radius: var(--radius-pill);
+        }
+
+        .resume-entry-sub {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--ink-muted);
+            margin-bottom: 8px;
+        }
+
+        .resume-entry-body {
+            font-size: 0.95rem;
+            color: var(--ink-secondary);
+            line-height: 1.6;
+        }
+
+        .term-group-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin: 20px 0 14px;
+            padding: 8px 14px;
+            border-radius: var(--radius-md);
+        }
+
+        .term-group-title.midterm {
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+        }
+
+        .term-group-title.finals {
+            background: rgba(16, 185, 129, 0.08);
+            color: #059669;
+            border-left: 4px solid #10b981;
+        }
+
+        [data-theme="dark"] .term-group-title.finals {
+            color: #34d399;
+            border-left-color: #34d399;
+        }
+
+        .activity-card-compact {
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            background: var(--bg-surface-elevated);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: all var(--trans-fast);
+        }
+
+        .activity-card-compact:hover {
+            border-color: var(--line-hover);
+            transform: translateX(4px);
+        }
+
+        .activity-card-content h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ink-primary);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .activity-card-content p {
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+            margin: 0 0 8px;
+            line-height: 1.5;
+        }
+
+        .activity-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .act-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            border: 1px solid var(--tag-border);
+        }
+
+        .act-badge-code {
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: var(--radius-pill);
+            background: var(--accent-subtle);
+            color: var(--accent);
+            letter-spacing: 0.04em;
+        }
+
+        .act-badge-code.final {
+            background: rgba(16, 185, 129, 0.12);
+            color: #059669;
+        }
+
+        [data-theme="dark"] .act-badge-code.final {
+            color: #34d399;
+        }
+
+        .act-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: var(--radius-pill);
+            background: var(--accent);
+            color: #ffffff !important;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all var(--trans-fast);
+        }
+
+        .act-link-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                background-image: none !important;
+            }
+
+            .resume-top-nav,
+            #theme-toggle,
+            .skip-link,
+            .act-link-btn {
+                display: none !important;
+            }
+
+            .standalone-resume-page {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .resume-paper {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                background: #ffffff !important;
+            }
+
+            .resume-sheet-title h1 {
+                color: #000000 !important;
+            }
+
+            .term-group-title {
+                border-left-width: 3px !important;
+                background: #f1f5f9 !important;
+                color: #0f172a !important;
+            }
+
+            .activity-card-compact {
+                border: 1px solid #e2e8f0 !important;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="standalone-resume-page">
+        <!-- Navigation Controls -->
+        <div class="resume-top-nav">
+            <a href="index.html" class="resume-back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span>Back to Portfolio Home</span>
+            </a>
+
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button type="button" onclick="window.print()" class="resume-back-link" style="cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+                    <span>Print / Save PDF</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Resume Document Sheet -->
+        <main class="resume-paper">
+            <header class="resume-sheet-header">
+                <div class="resume-sheet-title">
+                    <h1>Gerald R. Velasco</h1>
+                    <div class="degree-tag">Bachelor of Science in Information Technology (BSIT) &bull; Frontend Developer</div>
+                    <div class="resume-contact-inline">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <a href="mailto:velascogerald.pdm@gmail.com">velascogerald.pdm@gmail.com</a>
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Marikina City, Philippines
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+                            Available for Internships &amp; Projects
+                        </span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Summary -->
+            <section class="resume-block">
+                <h2 class="resume-section-heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Professional Summary
+                </h2>
+                <div class="resume-entry-body">
+                    <p>
+                        Information Technology student with a strong passion for web development and software systems. Proficient in crafting semantic, accessible, and responsive user interfaces with HTML5, modern CSS layouts (Flexbox &amp; Grid), and interactive JavaScript. Possesses practical laboratory experience implementing asynchronous architectures with ES6 Promises, dynamic DOM events, jQuery manipulation, and native AJAX/XMLHttpRequest workflows.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="resume-block">
+                <h2 class="resume-section-heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    Education
+                </h2>
+                <div class="resume-entry-header">
+                    <h3>Bachelor of Science in Information Technology (BSIT)</h3>
+                    <span class="resume-entry-date">2023 &ndash; Present</span>
+                </div>
+                <div class="resume-entry-sub">Pambayang Dalubhasaan ng Marilao (PDM)</div>
+                <div class="resume-entry-body">
+                    <p>
+                        Relevant Coursework: Web Systems &amp; Technologies, Software Development, Database Management Systems, Information Assurance &amp; Security, Human-Computer Interaction.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="resume-block">
+                <h2 class="resume-section-heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    Technical Competencies
+                </h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 10px;">
+                    <div>
+                        <strong>Frontend &amp; Markup:</strong>
+                        <p style="margin-top: 4px; font-size: 0.9rem; color: var(--ink-secondary);">HTML5 Semantic, CSS3 Modern, Flexbox, CSS Grid, Responsive Web Design</p>
+                    </div>
+                    <div>
+                        <strong>Scripting &amp; Libraries:</strong>
+                        <p style="margin-top: 4px; font-size: 0.9rem; color: var(--ink-secondary);">JavaScript (ES6+), DOM Manipulation, Event Listeners, jQuery 3.7</p>
+                    </div>
+                    <div>
+                        <strong>Asynchronous &amp; Networking:</strong>
+                        <p style="margin-top: 4px; font-size: 0.9rem; color: var(--ink-secondary);">ES6 Promises, Promise.all(), AJAX / XMLHttpRequest, REST API concepts</p>
+                    </div>
+                    <div>
+                        <strong>Tools &amp; Workflow:</strong>
+                        <p style="margin-top: 4px; font-size: 0.9rem; color: var(--ink-secondary);">Git &amp; GitHub, Vercel Cloud Deployment, VS Code, Browser DevTools</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Coursework & Activities -->
+            <section class="resume-block">
+                <h2 class="resume-section-heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                    Coursework &amp; Academic Laboratory Activities
+                </h2>
+
+                <!-- Midterm Period -->
+                <div class="term-group-title midterm">
+                    <span>Midterm Activities (Activity 1, 2, 4, 5)</span>
+                </div>
+
+                <!-- Midterm Activity 1 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code">ACT 1</span>
+                            Personal Web Journal
+                        </h4>
+                        <p>Constructed a semantic HTML journal page demonstrating header structures, definition lists, ordered/unordered lists, and clean intra-document hyperlinking.</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">HTML5 Semantic</span>
+                            <span class="act-tag">Definition Lists</span>
+                            <span class="act-tag">Hyperlinks</span>
+                        </div>
+                    </div>
+                    <a href="./activity1/Journal.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+
+                <!-- Midterm Activity 2 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code">ACT 2</span>
+                            Student Multi-Page Portal System
+                        </h4>
+                        <p>Implemented a cohesive multi-page website featuring an institutional homepage, comprehensive student registration form with field controls, and academic grade report tables.</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">HTML Forms</span>
+                            <span class="act-tag">Grade Tables</span>
+                            <span class="act-tag">Multi-Page Architecture</span>
+                        </div>
+                    </div>
+                    <a href="./activity2/Home.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+
+                <!-- Midterm Activity 4 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code">ACT 4</span>
+                            Refined Student Portal with Flexbox
+                        </h4>
+                        <p>Architected an advanced iteration of the student portal utilizing external stylesheets, CSS Flexbox layouts, styled form inputs, and enhanced typography hierarchy.</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">External CSS3</span>
+                            <span class="act-tag">Flexbox Layout</span>
+                            <span class="act-tag">Styled Forms</span>
+                        </div>
+                    </div>
+                    <a href="./activity4/Home.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+
+                <!-- Midterm Activity 5 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code">ACT 5</span>
+                            La KAPE pa &mdash; Commercial Brand Landing Page
+                        </h4>
+                        <p>Designed a commercial landing page showcasing hero storytelling, warm branding aesthetics, and a responsive product showcase grid with custom coffee imagery.</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">Commercial UI</span>
+                            <span class="act-tag">Product Grid</span>
+                            <span class="act-tag">Brand Aesthetics</span>
+                        </div>
+                    </div>
+                    <a href="./activity5/Home.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+
+                <!-- Finals Period -->
+                <div class="term-group-title finals">
+                    <span>Finals Activities (Final Activity 1 &ndash; 4)</span>
+                </div>
+
+                <!-- Final Activity 1 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code final">FINAL 1</span>
+                            Interactive Student Card &amp; Gesture Events
+                        </h4>
+                        <p>Engineered an interactive student identification card featuring real-time nickname synchronization, year level selector, and dynamic DOM event listeners (click, double click, press-and-hold).</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">JavaScript DOM</span>
+                            <span class="act-tag">Event Listeners</span>
+                            <span class="act-tag">Gesture Handling</span>
+                        </div>
+                    </div>
+                    <a href="./final-activity1/index.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+
+                <!-- Final Activity 2 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code final">FINAL 2</span>
+                            Asynchronous Promises &amp; Parallel Dashboard Loader
+                        </h4>
+                        <p>Created an asynchronous loading simulation utilizing JavaScript ES6 Promise chaining for multi-stage asset loading, paired with Promise.all() for concurrent dashboard state resolution.</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">ES6 Promises</span>
+                            <span class="act-tag">Promise.all()</span>
+                            <span class="act-tag">Async Flow</span>
+                        </div>
+                    </div>
+                    <a href="./final-activity2/index.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+
+                <!-- Final Activity 3 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code final">FINAL 3</span>
+                            jQuery Dynamic Student Profile &amp; Table Filters
+                        </h4>
+                        <p>Built a student records interface with jQuery 3.7 incorporating animated element visibility toggles, interactive mouse state handlers, dynamic course dropdown binding, and alternating zebra table striping.</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">jQuery 3.7</span>
+                            <span class="act-tag">DOM Animation</span>
+                            <span class="act-tag">Zebra Table Styling</span>
+                        </div>
+                    </div>
+                    <a href="./final-activity3/index.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+
+                <!-- Final Activity 4 -->
+                <div class="activity-card-compact">
+                    <div class="activity-card-content">
+                        <h4>
+                            <span class="act-badge-code final">FINAL 4</span>
+                            AJAX / XMLHttpRequest Dynamic Content Loader
+                        </h4>
+                        <p>Developed an asynchronous data loader using the native browser XMLHttpRequest (XHR) API to fetch student record fragments dynamically and render them without triggering a full page refresh.</p>
+                        <div class="activity-tag-row">
+                            <span class="act-tag">AJAX / XHR</span>
+                            <span class="act-tag">Asynchronous Fetch</span>
+                            <span class="act-tag">Partial DOM Updates</span>
+                        </div>
+                    </div>
+                    <a href="./final-activity4/index.html" target="_blank" class="act-link-btn">
+                        <span>Open &nearr;</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+
