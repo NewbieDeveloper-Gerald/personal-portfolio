@@ -898,6 +898,142 @@ section {
     border-top: 1px solid var(--line);
 }
 
+/* Activities Hub Teaser on Landing Page */
+.activities-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1060px;
+    margin: 0 auto 40px;
+}
+
+@media (max-width: 768px) {
+    .activities-teaser-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.activities-teaser-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    padding: 36px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--trans-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.activities-teaser-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--accent);
+}
+
+.activities-teaser-card.finals::before {
+    background: #10b981;
+}
+
+.activities-teaser-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+.teaser-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    background: var(--accent-subtle);
+    color: var(--accent);
+    margin-bottom: 16px;
+    width: fit-content;
+}
+
+.activities-teaser-card.finals .teaser-badge {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+}
+
+[data-theme="dark"] .activities-teaser-card.finals .teaser-badge {
+    color: #34d399;
+}
+
+.teaser-card-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--ink-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.teaser-card-desc {
+    font-size: 0.96rem;
+    color: var(--ink-secondary);
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.teaser-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.teaser-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid var(--tag-border);
+    border-radius: var(--radius-pill);
+}
+
+.teaser-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all var(--trans-fast);
+    margin-top: auto;
+}
+
+.activities-teaser-card.finals .teaser-card-link {
+    color: #059669;
+}
+
+[data-theme="dark"] .activities-teaser-card.finals .teaser-card-link {
+    color: #34d399;
+}
+
+.teaser-card-link:hover {
+    gap: 12px;
+}
+
+.teaser-cta-wrap {
+    text-align: center;
+    margin-top: 10px;
+}
+
 /* Filter Controls */
 .filter-tabs {
     display: flex;
