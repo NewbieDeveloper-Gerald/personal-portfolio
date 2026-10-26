@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,33 +47,6 @@
                     <span>Contact</span>
                 </a>
             </nav>
-
-            <div class="header-actions">
-                <!-- Theme Toggle Button -->
-                <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark and light theme" title="Toggle theme">
-                    <!-- Sun icon for light mode -->
-                    <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="4"></circle>
-                        <path d="M12 2v2"></path>
-                        <path d="M12 20v2"></path>
-                        <path d="m4.93 4.93 1.41 1.41"></path>
-                        <path d="m17.66 17.66 1.41 1.41"></path>
-                        <path d="M2 12h2"></path>
-                        <path d="M20 12h2"></path>
-                        <path d="m6.34 17.66-1.41 1.41"></path>
-                        <path d="m19.07 4.93-1.41 1.41"></path>
-                    </svg>
-                    <!-- Moon icon for dark mode -->
-                    <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                    </svg>
-                </button>
-
-                <a href="resume.html" target="_blank" class="nav-cta-btn" aria-label="View Curriculum Vitae">
-                    <span>Resume / CV</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-            </div>
         </div>
     </header>
 
@@ -282,7 +255,7 @@
                         </h4>
                         <div class="skills-pill-grid">
                             <span class="skill-pill"><span class="skill-dot"></span>Accessibility (a11y)</span>
-                            <span class="skill-pill"><span class="skill-dot"></span>Dark/Light Theming</span>
+                            <span class="skill-pill"><span class="skill-dot"></span>Component Architecture</span>
                             <span class="skill-pill"><span class="skill-dot"></span>Design Tokens</span>
                             <span class="skill-pill"><span class="skill-dot"></span>Visual Hierarchy</span>
                             <span class="skill-pill"><span class="skill-dot"></span>Micro-interactions</span>
@@ -393,7 +366,6 @@
             <div class="footer-links">
                 <a href="activities.html">Activities (9 Projects)</a>
                 <a href="#about">About Me</a>
-                <a href="resume.html" target="_blank">Resume / CV</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -415,37 +387,14 @@
         (function() {
             'use strict';
 
-            // 1. Theme Management (Light / Dark mode toggle with persistence)
-            const htmlElement = document.documentElement;
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            
-            function getPreferredTheme() {
-                const savedTheme = localStorage.getItem('portfolio-theme');
-                if (savedTheme) {
-                    return savedTheme;
-                }
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            // Clear any legacy theme preference to ensure clean light mode
+            try {
+                localStorage.removeItem('portfolio-theme');
+            } catch (e) {
+                // Storage access restricted or disabled
             }
 
-            function applyTheme(theme) {
-                htmlElement.setAttribute('data-theme', theme);
-                localStorage.setItem('portfolio-theme', theme);
-            }
-
-            // Initialize theme on load
-            applyTheme(getPreferredTheme());
-
-            // Handle theme button click
-            if (themeToggleBtn) {
-                themeToggleBtn.addEventListener('click', () => {
-                    const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
-                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                    applyTheme(newTheme);
-                    showToast(newTheme === 'dark' ? 'Switched to Dark Mode' : 'Switched to Light Mode');
-                });
-            }
-
-            // 2. Scrollspy & Intersection Observer for Navigation Links
+            // 1. Scrollspy & Intersection Observer for Navigation Links
             const navLinks = document.querySelectorAll('.main-nav a');
             const sections = document.querySelectorAll('section[id]');
             
@@ -472,7 +421,7 @@
 
             sections.forEach(sec => sectionObserver.observe(sec));
 
-            // 3. Clipboard Copy with Toast Feedback
+            // 2. Clipboard Copy with Toast Feedback
             const copyEmailBtn = document.getElementById('copy-email-btn');
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toast-message');
@@ -508,7 +457,7 @@
                 });
             }
 
-            // 4. Back to Top Floating Button
+            // 3. Back to Top Floating Button
             const backToTopBtn = document.getElementById('back-to-top');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 400) {
