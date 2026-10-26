@@ -248,37 +248,30 @@ button {
 
 .brand-name {
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 .brand-name .title {
-    font-size: 0.95rem;
-    line-height: 1.1;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     color: var(--ink-primary);
-}
-
-.brand-name .subtitle {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-muted);
 }
 
 /* Main Navigation Links */
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     list-style: none;
 }
 
 .main-nav a {
     position: relative;
     color: var(--ink-secondary);
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: var(--radius-pill);
     text-decoration: none;
     transition: color var(--trans-fast), background var(--trans-fast);
@@ -1620,18 +1613,18 @@ section {
     }
 
     .main-nav a {
-        font-size: 0.72rem;
+        font-size: 0.78rem;
+        font-weight: 600;
         padding: 6px 10px;
-        display: flex;
-        flex-direction: column;
+        display: inline-flex;
         align-items: center;
-        gap: 2px;
+        gap: 5px;
         white-space: nowrap;
     }
 
     .main-nav a.nav-btn-github {
-        margin-left: 0;
-        padding: 6px 10px;
+        margin-left: 2px;
+        padding: 6px 11px;
     }
 
     .main-nav a svg {
