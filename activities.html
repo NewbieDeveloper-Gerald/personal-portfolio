@@ -4,14 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coursework Archive | Gerald R. Velasco — BSIT Frontend Portfolio</title>
+  <title>Projects Directory | Gerald R. Velasco — BSIT 3rd Year (PDM)</title>
   <meta name="description"
-    content="Complete archive of 9 Midterm and Finals frontend development builds by Gerald R. Velasco, BS Information Technology student at Pambayang Dalubhasaan ng Marilao.">
-  <meta name="theme-color" content="#F6F5F2">
+    content="Projects directory for Gerald R. Velasco — 3rd Year BS Information Technology student at Pambayang Dalubhasaan ng Marilao (PDM). Project links will be added shortly.">
+  <meta name="theme-color" content="#FFFFFF">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("gv-theme");
+        if (saved === "dark" || (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="portfolio_styles.css">
 </head>
@@ -25,31 +35,16 @@
         <div class="brand-monogram" aria-hidden="true">GV</div>
         <div class="brand-meta">
           <span class="brand-name">Gerald R. Velasco</span>
-          <span class="brand-tag">BSIT &bull; Frontend Dev</span>
+          <span class="brand-tag">BSIT 3rd Year &bull; PDM</span>
         </div>
       </a>
 
-      <button type="button" class="nav-toggle-btn" id="nav-toggle" aria-expanded="false" aria-controls="main-nav"
-        aria-label="Toggle navigation menu">
-        <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-        <span>Menu</span>
-      </button>
-
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
         <a href="index.html">Overview</a>
-        <a href="activities.html" class="active" aria-current="page">Activities</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#stack">Tech Stack</a>
+        <a href="activities.html" class="active" aria-current="page">Projects</a>
         <a href="resume.html">Resume</a>
-        <a href="index.html#about">About</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://github.com/NewbieDeveloper-Gerald" target="_blank" rel="noopener noreferrer"
           class="nav-btn-github">
@@ -62,397 +57,94 @@
           <span>GitHub</span>
         </a>
       </nav>
+
+      <div class="header-controls">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-pressed="false"
+          aria-label="Toggle dark or light theme">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="nav-toggle-btn" id="nav-toggle" aria-expanded="false" aria-controls="main-nav"
+          aria-label="Toggle navigation menu">
+          <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>Menu</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main-content" class="page-content">
-    <section id="activities" class="content-section page-top-section" aria-labelledby="activities-title">
-      <div class="breadcrumb-row">
-        <a href="index.html" class="back-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
+    <section class="hero-section" aria-labelledby="projects-page-title">
+      <div class="section-header-split">
+        <div>
+          <h1 id="projects-page-title" class="section-title">Projects Directory</h1>
+          <p class="section-subtitle">
+            Dedicated index reserved for web applications built with HTML, CSS, JavaScript, PostgreSQL (Supabase),
+            Vercel, and Render. Project links will be published here once&nbsp;provided.
+          </p>
+        </div>
+        <a href="index.html" class="secondary-btn">
+          <span aria-hidden="true">&larr;</span>
           <span>Back to Overview</span>
         </a>
       </div>
 
-      <div class="section-header">
-        <h1 id="activities-title" class="section-title">Coursework &amp; Web Builds Archive</h1>
-        <p class="section-subtitle">
-          Complete repository of 9 laboratory builds completed across the Midterm and Finals grading periods. Filter by
-          term, launch any project in a full tab, or open an interactive in-page&nbsp;preview.
-        </p>
-      </div>
-
-      <!-- Filter Controls -->
-      <div class="filter-bar" role="toolbar" aria-label="Filter projects by grading period">
-        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
-          All Builds <span class="filter-count">9</span>
-        </button>
-        <button type="button" class="filter-btn" data-filter="midterm" aria-pressed="false">
-          Midterm Period <span class="filter-count">5</span>
-        </button>
-        <button type="button" class="filter-btn" data-filter="finals" aria-pressed="false">
-          Finals Period <span class="filter-count">4</span>
-        </button>
-      </div>
-
-      <div class="projects-grid" id="projects-grid">
-        <!-- Activity 1 -->
-        <article class="project-card" data-category="midterm">
-          <div class="card-meta-header">
-            <span class="card-num-badge">MIDTERM 01</span>
-            <span class="card-type-tag">Midterm</span>
-          </div>
-          <div class="card-body">
-            <h2>Personal Web Journal</h2>
-            <p>
-              Multi-page HTML personal journal demonstrating unordered hobbies, ordered favorite series, web development
-              definition lists, and nested food&nbsp;lists.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">HTML5 Lists</span>
-              <span class="tech-tag">Multi-Page Links</span>
-              <span class="tech-tag">Document Structure</span>
+      <div class="projects-directory">
+        <ul class="staging-slots-list">
+          <li class="staging-slot-row">
+            <span class="staging-slot-code">Slot 1</span>
+            <div>
+              <p class="staging-slot-title">Featured Project Link Pending</p>
+              <p class="staging-slot-desc">Ready for live deployment URL (Vercel / Render) and project&nbsp;summary.</p>
             </div>
-          </div>
-          <div class="card-footer">
-            <a href="./activity1/Journal.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./activity1/Journal.html"
-              data-title="Midterm 01 — Personal Web Journal">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Activity 2 -->
-        <article class="project-card" data-category="midterm">
-          <div class="card-meta-header">
-            <span class="card-num-badge">MIDTERM 02</span>
-            <span class="card-type-tag">Midterm</span>
-          </div>
-          <div class="card-body">
-            <h2>Student Personal Website (Inline CSS)</h2>
-            <p>
-              Multi-page student portal connecting Home, Registration Form, Grade Table, and Profile views using
-              semantic landmarks and inline Flexbox&nbsp;styling.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">Semantic HTML5</span>
-              <span class="tech-tag">Inline CSS</span>
-              <span class="tech-tag">Forms &amp; Tables</span>
+            <span class="staging-slot-tag">Awaiting Link</span>
+          </li>
+          <li class="staging-slot-row">
+            <span class="staging-slot-code">Slot 2</span>
+            <div>
+              <p class="staging-slot-title">Featured Project Link Pending</p>
+              <p class="staging-slot-desc">Ready for live deployment URL and database / backend stack&nbsp;details.</p>
             </div>
-          </div>
-          <div class="card-footer">
-            <a href="./activity2/Home.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./activity2/Home.html"
-              data-title="Midterm 02 — Student Personal Website (Inline CSS)">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Activity 3 -->
-        <article class="project-card" data-category="midterm">
-          <div class="card-meta-header">
-            <span class="card-num-badge">MIDTERM 03</span>
-            <span class="card-type-tag live-tag">Live on Vercel</span>
-          </div>
-          <div class="card-body">
-            <h2>Interactive GWA Calculator</h2>
-            <p>
-              Deployed General Weighted Average calculator featuring dynamic subject-row management, real-time input
-              validation, and instant academic standing&nbsp;computation.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">DOM Logic</span>
-              <span class="tech-tag">Vercel Cloud</span>
+            <span class="staging-slot-tag">Awaiting Link</span>
+          </li>
+          <li class="staging-slot-row">
+            <span class="staging-slot-code">Repositories</span>
+            <div>
+              <p class="staging-slot-title">GitHub Source Repositories</p>
+              <p class="staging-slot-desc">Source repositories and continuous learning builds hosted on&nbsp;GitHub.</p>
             </div>
-          </div>
-          <div class="card-footer">
-            <a href="https://gwa-calculator-gerald23.vercel.app/" target="_blank" rel="noopener noreferrer"
-              class="card-action-primary">
-              <span>Launch Live App</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
+            <a href="https://github.com/NewbieDeveloper-Gerald" target="_blank" rel="noopener noreferrer"
+              class="contact-action-btn">
+              <span>View GitHub</span>
+              <span aria-hidden="true">&nearr;</span>
             </a>
-            <button type="button" class="card-action-secondary preview-trigger"
-              data-url="https://gwa-calculator-gerald23.vercel.app/"
-              data-title="Midterm 03 — Interactive GWA Calculator">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Activity 4 -->
-        <article class="project-card" data-category="midterm">
-          <div class="card-meta-header">
-            <span class="card-num-badge">MIDTERM 04</span>
-            <span class="card-type-tag">Midterm</span>
-          </div>
-          <div class="card-body">
-            <h2>Student Portal (External CSS &amp; Flexbox)</h2>
-            <p>
-              Multi-page student portal refactored with a dedicated external stylesheet, Flexbox two-column layout,
-              styled registration inputs, and academic grade&nbsp;tables.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">External CSS</span>
-              <span class="tech-tag">Flexbox Layout</span>
-              <span class="tech-tag">Semantic Portal</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="./activity4/Home.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./activity4/Home.html"
-              data-title="Midterm 04 — Student Portal (External CSS & Flexbox)">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Activity 5 -->
-        <article class="project-card" data-category="midterm">
-          <div class="card-meta-header">
-            <span class="card-num-badge">MIDTERM 05</span>
-            <span class="card-type-tag">Midterm</span>
-          </div>
-          <div class="card-body">
-            <h2>Neighborhood Coffee Shop Landing Page</h2>
-            <p>
-              Commercial coffee shop website ("Brewing Connections, One Cup at a Time") featuring a split hero banner,
-              artisan menu cards, story section, and contact&nbsp;footer.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">Landing Page</span>
-              <span class="tech-tag">Custom CSS3</span>
-              <span class="tech-tag">Product Cards</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="./activity5/Home.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./activity5/Home.html"
-              data-title="Midterm 05 — Neighborhood Coffee Shop Landing Page">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Final Activity 1 -->
-        <article class="project-card" data-category="finals">
-          <div class="card-meta-header">
-            <span class="card-num-badge finals-badge">FINALS 01</span>
-            <span class="card-type-tag finals-tag">Finals</span>
-          </div>
-          <div class="card-body">
-            <h2>Interactive Student ID Card</h2>
-            <p>
-              Event-driven student profile card demonstrating live nickname input binding, year-level selection, and
-              click, double-click, and press-and-hold event&nbsp;listeners.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">DOM Events</span>
-              <span class="tech-tag">Input Binding</span>
-              <span class="tech-tag">Interactive UI</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="./final-activity1/index.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./final-activity1/index.html"
-              data-title="Finals 01 — Interactive Student ID Card">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Final Activity 2 -->
-        <article class="project-card" data-category="finals">
-          <div class="card-meta-header">
-            <span class="card-num-badge finals-badge">FINALS 02</span>
-            <span class="card-type-tag finals-tag">Finals</span>
-          </div>
-          <div class="card-body">
-            <h2>JavaScript DOM Style &amp; State Controller</h2>
-            <p>
-              Interactive JavaScript laboratory demonstrating runtime DOM text updates, background color switching, and
-              dynamic Profile and Grades container&nbsp;mutations.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">JavaScript DOM</span>
-              <span class="tech-tag">Runtime Styling</span>
-              <span class="tech-tag">Event Listeners</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="./final-activity2/index.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./final-activity2/index.html"
-              data-title="Finals 02 — JavaScript DOM Style & State Controller">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Final Activity 3 -->
-        <article class="project-card" data-category="finals">
-          <div class="card-meta-header">
-            <span class="card-num-badge finals-badge">FINALS 03</span>
-            <span class="card-type-tag finals-tag">Finals</span>
-          </div>
-          <div class="card-body">
-            <h2>jQuery Student Profile &amp; Table Filter</h2>
-            <p>
-              Interactive student dashboard powered by jQuery 3.7 featuring profile show/hide transitions, course
-              dropdown binding, and even/odd table row&nbsp;highlighting.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">jQuery 3.7</span>
-              <span class="tech-tag">Table Filtering</span>
-              <span class="tech-tag">DOM Effects</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="./final-activity3/index.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./final-activity3/index.html"
-              data-title="Finals 03 — jQuery Student Profile & Table Filter">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Final Activity 4 -->
-        <article class="project-card" data-category="finals">
-          <div class="card-meta-header">
-            <span class="card-num-badge finals-badge">FINALS 04</span>
-            <span class="card-type-tag finals-tag">Finals</span>
-          </div>
-          <div class="card-body">
-            <h2>Asynchronous Student Record Loader (AJAX)</h2>
-            <p>
-              Client-side asynchronous data loader using XMLHttpRequest to fetch and inject student profile records on
-              demand without a full page&nbsp;reload.
-            </p>
-            <div class="tech-tags" aria-label="Technologies used">
-              <span class="tech-tag">AJAX / XHR</span>
-              <span class="tech-tag">Async JavaScript</span>
-              <span class="tech-tag">Dynamic Injection</span>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a href="./final-activity4/index.html" class="card-action-primary">
-              <span>Open Project</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-            <button type="button" class="card-action-secondary preview-trigger" data-url="./final-activity4/index.html"
-              data-title="Finals 04 — Asynchronous Student Record Loader (AJAX)">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>Quick Preview</span>
-            </button>
-          </div>
-        </article>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -461,69 +153,64 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="brand-monogram" aria-hidden="true">GV</div>
-        <p>&copy; <span id="year">2026</span> Gerald R. Velasco. Engineered with Semantic HTML5, CSS3 &amp;&nbsp;JS.</p>
+        <p>&copy; <span id="year">2026</span> Gerald R. Velasco. BSIT 3rd Year &middot; Pambayang Dalubhasaan ng&nbsp;Marilao.</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Overview</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#stack">Tech Stack</a>
         <a href="resume.html">Resume / CV</a>
-        <a href="index.html#about">About</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://github.com/NewbieDeveloper-Gerald" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </footer>
 
-  <!-- Interactive Activity Preview Modal -->
-  <div id="preview-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-    <div class="modal-container">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <span class="modal-dot" aria-hidden="true"></span>
-          <h2 id="modal-title" class="modal-title">Activity Preview</h2>
-        </div>
-        <div class="modal-controls">
-          <a id="modal-external-link" href="#" target="_blank" rel="noopener noreferrer" class="modal-btn-external">
-            <span>Open Full Page</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-          <button type="button" id="modal-close" class="modal-btn-close" aria-label="Close preview modal">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="modal-body">
-        <iframe id="preview-iframe" title="Project Live Preview" src="about:blank" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Back to Top Button -->
-  <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
-
   <script>
-    // Dynamic copyright year
     const yearEl = document.getElementById("year");
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
     }
 
-    // Mobile Menu Drawer Toggle
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+    function syncThemeControls() {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (themeToggle) {
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+      }
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute("content", isDark ? "#0B0D12" : "#FFFFFF");
+      }
+    }
+
+    syncThemeControls();
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        const nextTheme = isDark ? "light" : "dark";
+        if (nextTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.removeAttribute("data-theme");
+        }
+        syncThemeControls();
+        try {
+          localStorage.setItem("gv-theme", nextTheme);
+        } catch (e) {}
+      });
+    }
+
     const navToggle = document.getElementById("nav-toggle");
     const mainNav = document.getElementById("main-nav");
+
+    function closeMobileNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
 
     if (navToggle && mainNav) {
       navToggle.addEventListener("click", () => {
@@ -532,140 +219,26 @@
       });
 
       mainNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mainNav.classList.remove("is-open");
-          navToggle.setAttribute("aria-expanded", "false");
-        });
+        link.addEventListener("click", closeMobileNav);
+      });
+
+      document.addEventListener("click", (e) => {
+        if (mainNav.classList.contains("is-open") && !e.target.closest(".site-header")) {
+          closeMobileNav();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 860 && mainNav.classList.contains("is-open")) {
+          closeMobileNav();
+        }
       });
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && mainNav.classList.contains("is-open")) {
-          mainNav.classList.remove("is-open");
-          navToggle.setAttribute("aria-expanded", "false");
+          closeMobileNav();
           navToggle.focus();
         }
-      });
-    }
-
-    // Project Category Filter + URL Query Parameter Support (?filter=midterm|finals)
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
-
-    function applyFilter(filterValue) {
-      filterButtons.forEach((btn) => {
-        const matches = btn.getAttribute("data-filter") === filterValue;
-        btn.classList.toggle("active", matches);
-        btn.setAttribute("aria-pressed", String(matches));
-      });
-
-      projectCards.forEach((card) => {
-        const category = card.getAttribute("data-category");
-        if (filterValue === "all" || category === filterValue) {
-          card.hidden = false;
-        } else {
-          card.hidden = true;
-        }
-      });
-    }
-
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const filter = btn.getAttribute("data-filter");
-        applyFilter(filter);
-      });
-    });
-
-    const params = new URLSearchParams(window.location.search);
-    const initialFilter = params.get("filter");
-    if (initialFilter === "midterm" || initialFilter === "finals") {
-      applyFilter(initialFilter);
-    }
-
-    // Quick Preview Modal Logic with Focus Trap
-    const previewModal = document.getElementById("preview-modal");
-    const previewIframe = document.getElementById("preview-iframe");
-    const modalTitle = document.getElementById("modal-title");
-    const modalExternalLink = document.getElementById("modal-external-link");
-    const modalCloseBtn = document.getElementById("modal-close");
-    const previewTriggers = document.querySelectorAll(".preview-trigger");
-    let lastFocusedElement = null;
-
-    function openPreviewModal(url, title, triggerEl) {
-      if (!previewModal || !previewIframe) return;
-      lastFocusedElement = triggerEl || document.activeElement;
-      modalTitle.textContent = title;
-      modalExternalLink.href = url;
-      previewIframe.src = url;
-      previewModal.hidden = false;
-      document.body.style.overflow = "hidden";
-      modalCloseBtn.focus();
-    }
-
-    function closePreviewModal() {
-      if (!previewModal || !previewIframe) return;
-      previewModal.hidden = true;
-      previewIframe.src = "about:blank";
-      document.body.style.overflow = "";
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-      }
-    }
-
-    previewTriggers.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const url = btn.getAttribute("data-url");
-        const title = btn.getAttribute("data-title");
-        openPreviewModal(url, title, btn);
-      });
-    });
-
-    if (modalCloseBtn) {
-      modalCloseBtn.addEventListener("click", closePreviewModal);
-    }
-
-    if (previewModal) {
-      previewModal.addEventListener("click", (e) => {
-        if (e.target === previewModal) {
-          closePreviewModal();
-        }
-      });
-    }
-
-    document.addEventListener("keydown", (e) => {
-      if (!previewModal || previewModal.hidden) return;
-      if (e.key === "Escape") {
-        closePreviewModal();
-      } else if (e.key === "Tab") {
-        const focusable = previewModal.querySelectorAll(
-          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-        );
-        if (focusable.length === 0) return;
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    });
-
-    // Back to top button
-    const backToTopBtn = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-      if (!backToTopBtn) return;
-      if (window.scrollY > 360) {
-        backToTopBtn.classList.add("visible");
-      } else {
-        backToTopBtn.classList.remove("visible");
-      }
-    }, { passive: true });
-
-    if (backToTopBtn) {
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     }
   </script>

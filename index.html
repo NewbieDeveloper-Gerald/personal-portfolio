@@ -7,11 +7,21 @@
   <title>Gerald R. Velasco | 3rd Year BSIT Student &amp; Aspiring Web Developer</title>
   <meta name="description"
     content="Personal portfolio and credentials of Gerald R. Velasco — 3rd Year BS Information Technology student at Pambayang Dalubhasaan ng Marilao (PDM), SPES 2025 NBI Marilao &amp; SPES 2026 PDM IT Assistant.">
-  <meta name="theme-color" content="#F6F5F2">
+  <meta name="theme-color" content="#FFFFFF">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("gv-theme");
+        if (saved === "dark" || (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="portfolio_styles.css">
 </head>
@@ -28,22 +38,6 @@
           <span class="brand-tag">BSIT 3rd Year &bull; PDM</span>
         </div>
       </a>
-
-      <button type="button" class="nav-toggle-btn" id="nav-toggle" aria-expanded="false" aria-controls="main-nav"
-        aria-label="Toggle navigation menu">
-        <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-        <span>Menu</span>
-      </button>
 
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
         <a href="#home" class="active">Overview</a>
@@ -63,11 +57,49 @@
           <span>GitHub</span>
         </a>
       </nav>
+
+      <div class="header-controls">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-pressed="false"
+          aria-label="Toggle dark or light theme">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="nav-toggle-btn" id="nav-toggle" aria-expanded="false" aria-controls="main-nav"
+          aria-label="Toggle navigation menu">
+          <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span>Menu</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main-content" class="page-content">
-    <!-- Hero / Overview Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section" aria-labelledby="hero-name">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -151,7 +183,6 @@
       </div>
 
       <div class="credentials-grid">
-        <!-- SPES Work Experience Column -->
         <div class="credential-column">
           <div class="credential-col-header">
             <h3>SPES Work Assignments</h3>
@@ -187,8 +218,7 @@
           </ul>
         </div>
 
-        <!-- Academic Standing Column -->
-        <div class="credential-column">
+        <div class="credential-column education-col">
           <div class="credential-col-header">
             <h3>Education</h3>
             <span class="period-badge">Undergraduate</span>
@@ -196,7 +226,7 @@
 
           <div class="credential-entry">
             <div class="credential-entry-top">
-              <span class="credential-year-code">3RD YEAR</span>
+              <span class="credential-year-code">3rd Year</span>
               <span class="credential-duration">Current Standing</span>
             </div>
             <h4 class="credential-title">Bachelor of Science in Information Technology</h4>
@@ -225,7 +255,7 @@
       </div>
     </section>
 
-    <!-- Technology Stack & Growth Section -->
+    <!-- Technology Stack Ledger Section -->
     <section id="stack" class="content-section" aria-labelledby="stack-title">
       <div class="section-header">
         <h2 id="stack-title" class="section-title">Technology &amp; Tools</h2>
@@ -235,15 +265,12 @@
         </p>
       </div>
 
-      <div class="stack-matrix-grid">
-        <div class="stack-quadrant">
-          <div class="stack-quadrant-header">
+      <div class="stack-ledger">
+        <div class="stack-ledger-row">
+          <div class="stack-ledger-meta">
             <h3>Web Foundations</h3>
-            <span class="stack-quadrant-num">01 / FRONTEND</span>
+            <p>Building structured pages, responsive styling, and client-side behavior from core browser&nbsp;standards.</p>
           </div>
-          <p class="stack-quadrant-note">
-            Building structured pages, responsive styling, and client-side interactions from core browser&nbsp;standards.
-          </p>
           <div class="skills-pill-grid">
             <span class="skill-pill">HTML5</span>
             <span class="skill-pill">CSS3</span>
@@ -252,60 +279,51 @@
           </div>
         </div>
 
-        <div class="stack-quadrant">
-          <div class="stack-quadrant-header">
-            <h3>Database &amp; Backend Hosting</h3>
-            <span class="stack-quadrant-num">02 / DATA</span>
+        <div class="stack-ledger-row">
+          <div class="stack-ledger-meta">
+            <h3>Database &amp; Hosting</h3>
+            <p>Managing relational data storage and cloud-hosted Postgres instances for dynamic web&nbsp;applications.</p>
           </div>
-          <p class="stack-quadrant-note">
-            Managing relational data storage and managed cloud Postgres instances for dynamic&nbsp;applications.
-          </p>
           <div class="skills-pill-grid">
             <span class="skill-pill">PostgreSQL</span>
             <span class="skill-pill">Supabase Hosting</span>
-            <span class="skill-pill">Relational Schema Basics</span>
+            <span class="skill-pill">Relational Schemas</span>
           </div>
         </div>
 
-        <div class="stack-quadrant">
-          <div class="stack-quadrant-header">
+        <div class="stack-ledger-row">
+          <div class="stack-ledger-meta">
             <h3>Cloud Deployment</h3>
-            <span class="stack-quadrant-num">03 / DEPLOY</span>
+            <p>Publishing frontend builds and web services to live environments for testing and&nbsp;delivery.</p>
           </div>
-          <p class="stack-quadrant-note">
-            Publishing frontend builds and web services to live environments for testing and&nbsp;delivery.
-          </p>
           <div class="skills-pill-grid">
             <span class="skill-pill">Vercel</span>
             <span class="skill-pill">Render</span>
           </div>
         </div>
 
-        <div class="stack-quadrant">
-          <div class="stack-quadrant-header">
+        <div class="stack-ledger-row">
+          <div class="stack-ledger-meta">
             <h3>Version Control &amp; Practice</h3>
-            <span class="stack-quadrant-num">04 / WORKFLOW</span>
+            <p>Tracking source changes, managing remote repositories, and exploring complementary developer&nbsp;tools.</p>
           </div>
-          <p class="stack-quadrant-note">
-            Tracking source changes, managing remote repositories, and exploring additional developer&nbsp;tools.
-          </p>
           <div class="skills-pill-grid">
             <span class="skill-pill">Git</span>
             <span class="skill-pill">GitHub</span>
             <span class="skill-pill">VS Code &amp; Others</span>
           </div>
         </div>
-      </div>
 
-      <div class="stack-learning-strip">
-        <div class="stack-learning-copy">
-          <h3>Continuous Learning Mindset</h3>
-          <p>
-            Still learning and improving every day&mdash;focused on strengthening practical full-stack habits across
-            JavaScript, PostgreSQL, and clean web&nbsp;engineering.
-          </p>
+        <div class="stack-learning-row">
+          <div class="stack-learning-copy">
+            <h3>Continuous Learning</h3>
+            <p>
+              Still learning and improving every day&mdash;focused on strengthening practical full-stack habits across
+              JavaScript, PostgreSQL, and clean web&nbsp;engineering.
+            </p>
+          </div>
+          <span class="status-pill-neutral">3rd Year BSIT &middot; Growth in Progress</span>
         </div>
-        <span class="staging-status-pill">3rd Year BSIT &middot; Growth in Progress</span>
       </div>
     </section>
 
@@ -314,42 +332,31 @@
       <div class="section-header">
         <h2 id="projects-title" class="section-title">Selected Projects</h2>
         <p class="section-subtitle">
-          This section is reserved for my deployed projects and repositories built with Vercel, Render, and Supabase.
-          Project links will be added here&nbsp;shortly.
+          Reserved for my deployed builds created with Vercel, Render, and Supabase. Project links and details will be
+          added once&nbsp;finalized.
         </p>
       </div>
 
-      <div class="projects-staging-sheet">
-        <div class="projects-staging-header">
-          <div>
-            <h3>Project Directory &mdash; Links Pending</h3>
-            <p>
-              Clean project slots staged below so deployed applications and source links can be plugged in directly
-              once&nbsp;shared.
-            </p>
-          </div>
-          <span class="staging-status-pill">Awaiting Project Links</span>
-        </div>
-
+      <div class="projects-directory">
         <ul class="staging-slots-list">
           <li class="staging-slot-row">
-            <span class="staging-slot-code">PROJ 01</span>
+            <span class="staging-slot-code">Slot 1</span>
             <div>
-              <p class="staging-slot-title">Featured Project Slot 01</p>
+              <p class="staging-slot-title">Featured Project Link Pending</p>
               <p class="staging-slot-desc">Ready for live deployment URL (Vercel / Render) and project&nbsp;summary.</p>
             </div>
-            <span class="staging-slot-tag">Link Pending</span>
+            <span class="staging-slot-tag">Awaiting Link</span>
           </li>
           <li class="staging-slot-row">
-            <span class="staging-slot-code">PROJ 02</span>
+            <span class="staging-slot-code">Slot 2</span>
             <div>
-              <p class="staging-slot-title">Featured Project Slot 02</p>
+              <p class="staging-slot-title">Featured Project Link Pending</p>
               <p class="staging-slot-desc">Ready for live deployment URL and database / backend stack&nbsp;details.</p>
             </div>
-            <span class="staging-slot-tag">Link Pending</span>
+            <span class="staging-slot-tag">Awaiting Link</span>
           </li>
           <li class="staging-slot-row">
-            <span class="staging-slot-code">PROJ 03</span>
+            <span class="staging-slot-code">Repositories</span>
             <div>
               <p class="staging-slot-title">GitHub Source Repositories</p>
               <p class="staging-slot-desc">Additional repositories and practice builds maintained on&nbsp;GitHub.</p>
@@ -472,9 +479,47 @@
       yearEl.textContent = new Date().getFullYear();
     }
 
+    // Theme switcher & <meta name="theme-color"> sync
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+    function syncThemeControls() {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (themeToggle) {
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+      }
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute("content", isDark ? "#0B0D12" : "#FFFFFF");
+      }
+    }
+
+    syncThemeControls();
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        const nextTheme = isDark ? "light" : "dark";
+        if (nextTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          document.documentElement.removeAttribute("data-theme");
+        }
+        syncThemeControls();
+        try {
+          localStorage.setItem("gv-theme", nextTheme);
+        } catch (e) {}
+      });
+    }
+
     // Mobile Menu Drawer Toggle
     const navToggle = document.getElementById("nav-toggle");
     const mainNav = document.getElementById("main-nav");
+
+    function closeMobileNav() {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
 
     if (navToggle && mainNav) {
       navToggle.addEventListener("click", () => {
@@ -483,16 +528,24 @@
       });
 
       mainNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mainNav.classList.remove("is-open");
-          navToggle.setAttribute("aria-expanded", "false");
-        });
+        link.addEventListener("click", closeMobileNav);
+      });
+
+      document.addEventListener("click", (e) => {
+        if (mainNav.classList.contains("is-open") && !e.target.closest(".site-header")) {
+          closeMobileNav();
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 860 && mainNav.classList.contains("is-open")) {
+          closeMobileNav();
+        }
       });
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && mainNav.classList.contains("is-open")) {
-          mainNav.classList.remove("is-open");
-          navToggle.setAttribute("aria-expanded", "false");
+          closeMobileNav();
           navToggle.focus();
         }
       });
@@ -513,14 +566,32 @@
       }, 2800);
     }
 
-    // Copy email button
+    // Copy email button with file:// fallback
     const copyEmailBtn = document.getElementById("copy-email-btn");
     const copyEmailLabel = document.getElementById("copy-email-label");
+
+    function copyTextFallback(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      const succeeded = document.execCommand("copy");
+      document.body.removeChild(textarea);
+      if (!succeeded) throw new Error("Copy failed");
+    }
+
     if (copyEmailBtn) {
       copyEmailBtn.addEventListener("click", async () => {
         const email = copyEmailBtn.getAttribute("data-email");
         try {
-          await navigator.clipboard.writeText(email);
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            copyTextFallback(email);
+          }
           if (copyEmailLabel) copyEmailLabel.textContent = "Copied!";
           showToast("Copied " + email + " to clipboard");
           setTimeout(() => {
@@ -532,7 +603,7 @@
       });
     }
 
-    // Back to top button & Scrollspy for in-page anchor links
+    // Back to top button & Scrollspy
     const backToTopBtn = document.getElementById("back-to-top");
     const sections = document.querySelectorAll("main section[id]");
     const hashNavLinks = document.querySelectorAll('.main-nav a[href^="#"]');
@@ -548,7 +619,7 @@
         }
       }
 
-      const nearBottom = window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60;
+      const nearBottom = scrollY > 100 && (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60);
       let currentId = "home";
 
       if (nearBottom) {
