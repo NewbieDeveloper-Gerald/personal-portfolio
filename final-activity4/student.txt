@@ -1,3 +1,0 @@
-Name: Student 1
-Course: BSIT
-Year: 4th Year
